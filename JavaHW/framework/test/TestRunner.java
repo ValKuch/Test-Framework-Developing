@@ -60,6 +60,7 @@ public abstract class TestRunner {
     @AfterEach
     public void tearThis() {
         driver.manage().deleteAllCookies();
+        localStorageJS.clearLocalStorage();
         localStorageJS.removeItemFromLocalStorage("accessToken");
         localStorageJS.removeItemFromLocalStorage("refreshToken");
         presentationSleep(4);
